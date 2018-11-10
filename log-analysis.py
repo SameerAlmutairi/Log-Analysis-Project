@@ -66,11 +66,6 @@ def query_two_exceute():
 
 def query_three_exceute():
     """Q3: On which days did more than 1% of requests lead to errors?"""
-    # db = psycopg2.connect(database=DBNAME)
-    # c = db.cursor()
-    # c.execute(query_three)
-    # percentage_errors = c.fetchall()
-    # db.close()
     percentage_errors = query_execute(query_three)
     print("Question 3: The day that has more than 1% error requests is: ")
     for dt, er in percentage_errors:
