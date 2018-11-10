@@ -10,7 +10,7 @@ DBNAME = "news"
 query_one = '''
     SELECT articles.title, count(*) as num
     FROM articles, log
-    WHERE log.path like concat('/article/',articles.slug)
+    WHERE log.path = concat('/article/',articles.slug)
     GROUP BY articles.title
     ORDER BY num desc LIMIT 3;
 '''
