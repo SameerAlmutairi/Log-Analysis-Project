@@ -1,6 +1,6 @@
 # FSND Project (1) - Log Analysis
 
-By 
+By Sameer Almutairi
 
 ### Project overview
 > In this project, you will stretch your SQL database skills. You will get practice interacting with a live database both from the command line and from your code. You will explore a large database with over a million rows. And you will build and refine complex queries and use them to draw business conclusions from data. 
@@ -29,7 +29,7 @@ YourMachineName:vagrant$ vagrant up
 YourMachineName:vagrant$ vagrant ssh
 ```
 ### 2. Downloading and Loading Data
-  * Inside the vagrant create <b>“log-analysis-project“</b> folder:
+  * Inside vagrant vm create <b>“log-analysis-project“</b> folder:
   ```console
   vagrant@vagrant:~$ cd /vagrant
   vagrant@vagrant:/vagrant$ mkdir log-analysis-project
@@ -43,7 +43,7 @@ YourMachineName:vagrant$ vagrant ssh
   ```console
   vagrant@vagrant:/vagrant/log-analysis-project$ psql -d news -f newsdata.sql
   ```
-  * Connect to news database using :
+  * Connect to <b>“news”</b> database using :
   ```console
   vagrant@vagrant:/vagrant/log-analysis-project$ psql -d news
   ```
@@ -95,7 +95,8 @@ Foreign-key constraints:
     
   * Run python script inside vagrant vm using next command:
     ```console
-    vagrant@vagrant:/vagrant/log-analysis-project$ python3 log-analysis.py
+    vagrant@vagrant:/vagrant/log-analysis-project$ cd Log-Analysis-Project
+    vagrant@vagrant:/vagrant/log-analysis-project/Log-Analysis-Project$ python3 log-analysis.py
     ```
      > _You might get a message that you need to install `psycopg2-binary`, if you did just run the next command:_
     
