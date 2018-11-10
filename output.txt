@@ -3,11 +3,13 @@ Question 1: The Three most popular articles are:
 "Bears love berries, alleges bear" - 253801 views.
 "Bad things gone, say good people" - 170098 views.
 
+
 Question 2: The most popular article authors are: 
 "Ursula La Multa" - 507594 views.
 "Rudolf von Treppenwitz" - 423457 views.
 "Anonymous Contributor" - 170098 views.
 "Markoff Chaney" - 84557 views.
+
 
 Question 3: The day that has more than 1% error requests is: 
 July 17, 2016 - 2.26% errors.

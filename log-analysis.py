@@ -1,21 +1,22 @@
 #!/usr/bin/env python3
-# 
+
 import psycopg2
 
 # define database name
 DBNAME = "news"
 
+
 # define sql queries variables
 query_one = '''
     SELECT articles.title, count(*) as num
-    FROM articles, log 
+    FROM articles, log
     WHERE log.path like concat('/article/',articles.slug)
     GROUP BY articles.title
     ORDER BY num desc LIMIT 3;
 '''
 query_two = '''
     SELECT authors.name,count(*)
-    FROM log,articles, authors 
+    FROM log,articles, authors
     WHERE log.path = concat('/article/',articles.slug)
     AND articles.author = authors.id
     AND log.status like '%200%'
@@ -28,16 +29,16 @@ query_three = '''
      ROUND( 100.0 * e.error_count / (o.ok_count + e.error_count), 2) as e_rate
      FROM (
       SELECT time::date as error_day, count(*) as error_count
-      FROM log 
+      FROM log
       WHERE status like '%404%'
       GROUP BY error_day
       ORDER BY error_count DESC
       ) as e,
       (
        SELECT time::date as ok_day, count(*) as ok_count
-       FROM log 
+       FROM log
        WHERE status like '%200%'
-       GROUP BY ok_day 
+       GROUP BY ok_day
        ORDER BY ok_count DESC
        )as o
        WHERE e.error_day = o.ok_day) as p
@@ -76,15 +77,14 @@ def query_three_exceute():
 
 
 def query_execute(query):
-    """
-    This function is taking a sql query as a parameter
+    """This function is taking a sql query as a parameter
     then execute it and return the result
 
     args:
         query : sql query as (string)
 
     returns:
-        list of tuples containing query results 
+        list of tuples containing query results
     """
     try:
         db = psycopg2.connect(database=DBNAME)

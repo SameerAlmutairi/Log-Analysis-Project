@@ -98,7 +98,6 @@ Foreign-key constraints:
     vagrant@vagrant:/vagrant/log-analysis-project$ python3 log-analysis.py
     ```
      > _You might get a message that you need to install `psycopg2-binary`, if you did just run the next command:_
-    
     ```console
     vagrant@vagrant:/vagrant/log-analysis-project$ pip3 install psycopg2-binary
     ```
